@@ -84,14 +84,6 @@ for _, lsp in ipairs(servers) do
 end
 --]]
 
-require('lspconfig').ocamllsp.setup({
-    cmd = { "ocamllsp" },
-    on_attach = function(client, bufnr)
-        local opts = {buffer = bufnr, remap = false}
-        attach(opts)
-    end
-})
-
 --[[
 -- Fix Undefined global "vim"
 lsp.configure("rust_analyzer", {
@@ -136,8 +128,4 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
-local lspconfig = require("lspconfig")
 
-lspconfig.gdscript.setup({
-    cmd = { "godot-wsl-lsp","--useMirroredNetworking" },
-})
