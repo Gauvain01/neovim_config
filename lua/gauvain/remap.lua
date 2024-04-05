@@ -21,3 +21,5 @@ autocmd('LspAttach', {
 		vim.keymap.set("n", "<leader>ff", function() vim.lsp.buf.format() end, opts)
 	end
 })
+
+
